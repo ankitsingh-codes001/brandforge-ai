@@ -11,7 +11,7 @@ export default function InvoicePage() {
   const [invoice, setInvoice] = useState("");
   const [loading, setLoading] = useState(false);
  
-const generateInvoice = () => {
+const generateInvoice = async () => {
   if (!company || !client || !service || !amount) {
     alert("Please fill all fields.");
     return;
