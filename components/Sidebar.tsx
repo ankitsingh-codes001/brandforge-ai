@@ -5,14 +5,23 @@ import Link from "next/link";
 const menuItems = [
   { icon: "🏠", name: "Dashboard", href: "/dashboard" },
 
+  { icon: "👤", name: "Profile", href: "/profile" },
+
+  { icon: "💎", name: "Pro Plan", href: "/pro" },
+
   { icon: "🤖", name: "Business Name", href: "/tools" },
   { icon: "✨", name: "Slogan Generator", href: "/slogan" },
-  { icon: "🎨", name: "Logo Generator", href: "#" },
-  { icon: "🌐", name: "Website Builder", href: "#" },
-  { icon: "📄", name: "Invoice", href: "#" },
-  { icon: "📧", name: "Email Writer", href: "#" },
+  { icon: "🎨", name: "Logo Generator", href: "/logo" },
+  { icon: "🌐", name: "Website Builder", href: "/website" },
+  { icon: "🌍", name: "Domain Finder", href: "/domain" },
+  { icon: "📱", name: "Social Media", href: "/social" },
+  { icon: "📄", name: "Invoice", href: "/invoice" },
+  { icon: "📧", name: "Email Writer", href: "/email" },
+  { icon: "⭐", name: "Favorites", href: "/favorites" },
 
-  { icon: "⚙️", name: "Settings", href: "#" },
+  { icon: "📜", name: "History", href: "/history" },
+
+  { icon: "⚙️", name: "Settings", href: "/settings" },
 ];
 
 export default function Sidebar() {
@@ -57,9 +66,12 @@ export default function Sidebar() {
           Unlock unlimited AI generations and premium tools.
         </p>
 
-        <button className="mt-4 w-full rounded-xl bg-cyan-500 py-3 font-semibold transition hover:bg-cyan-400">
-          Upgrade
-        </button>
+        <Link
+  href="/pro"
+  className="mt-4 block w-full rounded-xl bg-cyan-500 py-3 text-center font-semibold transition hover:bg-cyan-400"
+>
+  Upgrade 🚀
+</Link>
       </div>
 
     </aside>

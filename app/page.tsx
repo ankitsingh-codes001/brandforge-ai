@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 import DashboardPreview from "@/components/DashboardPreview";
+import Sidebar from "@/components/Sidebar";
 
 export default function Home() {
   return (
@@ -26,13 +28,19 @@ export default function Home() {
         </p>
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <button className="rounded-xl bg-cyan-500 px-8 py-4 font-semibold transition hover:bg-cyan-400">
-            Start Free
-          </button>
+          <Link
+  href="/login"
+  className="rounded-xl bg-cyan-500 px-8 py-4 font-semibold transition hover:bg-cyan-400"
+>
+  Start Free
+</Link>
 
-          <button className="rounded-xl border border-gray-700 px-8 py-4 font-semibold transition hover:border-cyan-400">
-            Live Demo
-          </button>
+          <Link
+  href="/dashboard"
+  className="rounded-xl border border-gray-700 px-8 py-4 font-semibold transition hover:border-cyan-400"
+>
+  Live Demo
+</Link>
         </div>
         <DashboardPreview />
       </section>

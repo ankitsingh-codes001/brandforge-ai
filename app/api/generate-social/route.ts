@@ -1,17 +1,28 @@
 import { generateAIContent } from "@/lib/gemini";
-import { supabase } from "@/lib/supabase";
 
 export async function POST(req: Request) {
   try {
-    const { prompt } = await req.json();
+    const { business, platform, tone } = await req.json();
+
+    const prompt = `
+Create a viral social media post.
+
+Business: ${business}
+
+Platform: ${platform}
+
+Tone: ${tone}
+
+Return in this format:
+
+Caption:
+
+Hashtags:
+
+Call To Action:
+`;
 
     const result = await generateAIContent(prompt);
-
-    await supabase.from("history").insert({
-  tool: "Business Name Generator",
-  input: prompt,
-  output: result,
-});
 
     return Response.json({
       result,

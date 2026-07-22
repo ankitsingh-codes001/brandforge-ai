@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { supabase } from "@/lib/supabase";
+import { saveHistory } from "@/lib/saveHistory";
 
 export default function SloganPage() {
   const [business, setBusiness] = useState("");
@@ -31,8 +33,15 @@ export default function SloganPage() {
         .filter((line: string) => line);
 
       setSlogans(aiSlogans);
+
+      await saveHistory(
+  "Slogan Generator",
+  business,
+  aiSlogans.join("\n")
+);
     }
   };
+
 
   return (
     <main className="min-h-screen bg-slate-950 text-white flex items-center justify-center p-6">
